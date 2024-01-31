@@ -1,0 +1,105 @@
+{
+  "name": "react-webrtc",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "author": "Yang1206 <https://github.com/yang1206>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yang1206/react-webrtc.git"
+  },
+  "engines": {
+    "node": "20"
+  },
+  "scripts": {
+    "dev:all": "pnpm  dev & pnpm  dev:server",
+    "dev": "vite",
+    "dev:server": "nodemon --watch 'server/**/*.ts' --exec tsx server/index.ts",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:lint-staged": "lint-staged",
+    "postinstall": "npx simple-git-hooks",
+    "commit": "git pull && git add -A && git-cz && git push"
+  },
+  "dependencies": {
+    "@egoist/tailwindcss-icons": "^1.7.4",
+    "@headlessui/react": "^1.7.18",
+    "@tanstack/react-query": "^5.18.0",
+    "@tanstack/react-router": "^1.15.7",
+    "axios": "1.6.7",
+    "clsx": "^2.1.0",
+    "daisyui": "^4.6.1",
+    "express": "^4.18.2",
+    "hashids": "^2.3.0",
+    "jotai": "^2.6.3",
+    "nprogress": "^0.2.0",
+    "qs": "^6.11.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-query-kit": "^3.0.0",
+    "socket.io": "^4.7.4",
+    "socket.io-client": "^4.7.4",
+    "sonner": "^1.4.0",
+    "usehooks-ts": "^2.10.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.6.3",
+    "@commitlint/cli": "^18.6.0",
+    "@commitlint/config-conventional": "^18.6.0",
+    "@iconify-json/carbon": "^1.1.28",
+    "@iconify-json/heroicons-outline": "^1.1.10",
+    "@iconify-json/line-md": "^1.1.33",
+    "@iconify-json/svg-spinners": "^1.1.2",
+    "@tanstack/react-query-devtools": "^5.18.0",
+    "@tanstack/router-devtools": "^1.15.7",
+    "@tanstack/router-vite-plugin": "^1.15.4",
+    "@testing-library/react": "^14.2.0",
+    "@types/chai": "^4.3.11",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.13",
+    "@types/nprogress": "^0.2.3",
+    "@types/qs": "^6.9.11",
+    "@types/react": "^18.2.48",
+    "@types/react-dom": "^18.2.18",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.17",
+    "chai": "^5.0.3",
+    "commitizen": "^4.3.0",
+    "consola": "^3.2.3",
+    "cz-git": "^1.8.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "eslint-plugin-tailwindcss": "^3.14.1",
+    "jsdom": "^24.0.0",
+    "lint-staged": "^15.2.1",
+    "nodemon": "^3.0.3",
+    "postcss": "^8.4.33",
+    "simple-git-hooks": "^2.9.0",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3",
+    "unplugin-auto-import": "^0.17.5",
+    "vite": "5.0.12",
+    "vite-plugin-mkcert": "^1.17.3",
+    "vitest": "^1.2.2"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint:lint-staged"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git",
+      "useEmoji": true
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  }
+}

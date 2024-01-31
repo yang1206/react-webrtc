@@ -1,0 +1,17 @@
+{
+  "gnr": {
+    "prefix": "gnr",
+    "body": [
+      "import { createFileRoute } from '@tanstack/react-router';",
+      "export const Route = createFileRoute('/${1:ComponentName}')({",
+      "  component: ${1:ComponentName},",
+      "});",
+      "function ${1:ComponentName}() {",
+      "  return (",
+      "    <div></div>",
+      "  );",
+      "}"
+    ],
+    "description": "create new route"
+  }
+}
